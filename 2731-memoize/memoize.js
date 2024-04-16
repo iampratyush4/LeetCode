@@ -10,7 +10,7 @@ function memoize(fn) {
     } else {
       const result = fn(...args);
       cache[key] = result;
-      callCount++;
+      callCount=callCount +1 ;
       return result;
     }
   };

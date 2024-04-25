@@ -4,7 +4,7 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-from statistics import mean 
+import numpy
 class Solution:
     def averageOfLevels(self, root: Optional[TreeNode]) -> List[float]:
         if root ==None : return []
@@ -21,7 +21,7 @@ class Solution:
                 if node.right is not None: 
                     Q.append(node.right)
                 level_node.append(node.val)
-            result.append(mean(level_node))
+            result.append(numpy.average(level_node))
         return result
 
         

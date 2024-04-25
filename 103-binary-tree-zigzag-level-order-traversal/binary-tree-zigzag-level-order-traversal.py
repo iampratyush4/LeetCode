@@ -15,27 +15,23 @@ class Solution:
             count=len(Q)
             level_node=[]
             for i in range(count):
+
                 node=Q[0]
                 Q.pop(0)
                 if node.left is not None: 
                     Q.append(node.left)
+
                 if node.right is not None: 
                     Q.append(node.right)
+                    
                 level_node.append(node.val)
+
             if c%2 ==0:
                 result.append(level_node)
                 c=c+1
+
             else:
+
                 result.append(reversed(level_node))
                 c=c+1
-
-
-
-
-            # result.append(level_node)
         return result
-
-
-
-
-        

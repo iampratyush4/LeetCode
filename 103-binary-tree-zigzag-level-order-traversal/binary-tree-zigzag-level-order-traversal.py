@@ -4,7 +4,6 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-
 class Solution:
     def zigzagLevelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         if root ==None : return []
@@ -34,4 +33,6 @@ class Solution:
 
                 result.append(reversed(level_node))
                 c=c+1
+        print(result)
         return result
+        

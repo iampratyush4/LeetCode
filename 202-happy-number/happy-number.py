@@ -18,10 +18,6 @@ class Solution:
                 return False
             l.append(h)
             
-            
-            
-            
-
         if k == 1:
             return True
         else:

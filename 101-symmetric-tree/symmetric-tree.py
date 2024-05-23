@@ -6,40 +6,19 @@
 #         self.right = right
 class Solution:
     def isSymmetric(self, root: Optional[TreeNode]) -> bool:
-        if root ==None : return []
-        result,Q=[],[]
-        Q.append(root)
-        while Q:
-            count=len(Q)
-            level_node=[]
-            for i in range(count):
-                node=Q[0]
-                Q.pop(0)
-                
-                if node.right is not None: 
-                    Q.append(node.right)
 
-                if node.left is not None: 
-                    Q.append(node.left)
 
-                if node.left is None :
-                    print(node.val,"this is node val" )
-                    level_node.append(None)
+        def checkdfs(left,right):
 
-                level_node.append(node.val)
-
-                if node.right is None :
-                    level_node.append(None)
-            
-                
-            if level_node != list(reversed(level_node)):
+            if not left and not right:
+                return True
+            if not left or not right:
                 return False
-            print(level_node)
-            result.append(level_node)
+            ans= (left.val == right.val and checkdfs(left.left,right.right) and checkdfs(left.right, right.left))
+                    
+            return ans
+        return checkdfs(root.left,root.right)
 
-            # print (level_node)
-        return True
-            
 
 
 
